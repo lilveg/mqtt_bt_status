@@ -1,0 +1,7 @@
+FROM pipelinecomponents/ruff
+
+WORKDIR /src
+ADD . /src
+
+CMD ruff check && ruff format
+
