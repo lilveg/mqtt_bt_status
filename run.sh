@@ -6,6 +6,6 @@ if [[ ! -f unique_id ]]; then
     echo $RANDOM > unique_id
 fi
 
-docker run -it $(docker build -q . -f Dockerfile.lint)
+docker run -v $(pwd):/src -it $(docker build -q . -f Dockerfile.lint)
 docker run -it $(docker build -q .)
 
